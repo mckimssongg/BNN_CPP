@@ -39,3 +39,11 @@ PerceptronMulticapa::PerceptronMulticapa(std::vector<size_t> capas, double bias)
         }
     }    
 }
+
+void PerceptronMulticapa::establecer_pesos(std::vector<std::vector<std::vector<double> > > pesos_iniciales){
+    for(size_t i=0; i<pesos_iniciales.size();i++){
+        for(size_t j =0; j<pesos_iniciales[i].size();j++){
+            red[i+1][j].establecer_pesos(pesos_iniciales[i][j]);
+        }
+    }
+}
