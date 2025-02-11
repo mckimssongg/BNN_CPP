@@ -19,6 +19,7 @@ class Perceptron{
     public:
         PerceptronMulticapa(std::vector<size_t> capas, double bias);
         void establecer_pesos(std::vector<std::vector<std::vector<double> > > pesos_iniciales);
+        std::vector<double> ejecutar(std::vector<double> datos_de_entrada);
         std::vector<std::vector<Perceptron> > red;
         std::vector<size_t> capas;   
         std::vector<std::vector<double> > valores;

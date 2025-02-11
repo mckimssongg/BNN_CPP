@@ -47,3 +47,15 @@ void PerceptronMulticapa::establecer_pesos(std::vector<std::vector<std::vector<d
         }
     }
 }
+
+std::vector<double> PerceptronMulticapa::ejecutar(std::vector<double> datos_de_entrada){
+
+    valores[0] = datos_de_entrada;
+
+    for(size_t i=1; i<red.size(); i++){
+        for(size_t j=0; j<capas[i]; j++){
+            valores[i][j] = red[i][j].ejecutar(valores[i-1]);
+        }
+    }
+    return valores.back();
+}
